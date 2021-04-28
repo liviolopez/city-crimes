@@ -1,0 +1,46 @@
+Dependency Injection - Dagger Hilt
+
+@startuml
+package Dagger-Hilt {
+    frame EntryPoint as entry {
+        component App as app
+
+        frame Activities {
+            component MainActivity as main
+
+            frame Test as testEntry #LightGray {
+                component HiltActivityTest as hilt
+            }
+        }
+
+        frame Fragments {
+            component StoriesFragment as stories
+            component SourceFragment as source
+        }
+
+        app -down-> main
+        app -down..|> hilt
+        main -down-> stories
+        main -down-> source
+    }
+
+    rectangle Modules as modules {
+        collections "Local (DB)" as local
+        collections "RemoteParams" as remoteParams
+        collections "Remote (API)" as remote
+        collections "Repository" as repository
+
+        frame Test as testModule #LightGray {
+            collections "RemoteParams" as remoteParamsTest
+        }
+
+        local - remote
+        remote - repository
+
+        remoteParams -down-> remote
+        remoteParamsTest -down..|> remote
+
+        remoteParams - remoteParamsTest
+    }
+}
+@enduml

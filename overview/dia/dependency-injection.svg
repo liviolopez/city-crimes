@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1170px" preserveAspectRatio="none" style="width:1838px;height:1170px;" version="1.1" viewBox="0 0 1838 1170" width="1838px" zoomAndPan="magnify"><defs><filter height="300%" id="f1rsnufkbqjcge" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="4.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="8.0" dy="8.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[2961d9be8c55eb817345430b4073e166]
+cluster Dagger-Hilt--><polygon fill="#FFFFFF" filter="url(#f1rsnufkbqjcge)" points="32,12,218,12,232,56.9766,1804,56.9766,1804,1156,32,1156,32,12" style="stroke:#000000;stroke-width:3.0;"/><line style="stroke:#000000;stroke-width:3.0;" x1="32" x2="232" y1="56.9766" y2="56.9766"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="174" x="40" y="43.0703">Dagger-Hilt</text><!--MD5=[72cde8695aca950924826f7c899fc017]
+cluster entry--><rect fill="#FFFFFF" filter="url(#f1rsnufkbqjcge)" height="934" style="stroke:#000000;stroke-width:3.0;" width="844" x="912" y="174"/><path d="M1082,174 L1082,192.9766 L1062,212.9766 L912,212.9766 " fill="none" style="stroke:#000000;stroke-width:3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="150" x="918" y="203.0703">EntryPoint</text><!--MD5=[d3adad3d42be31427cf1bc84ba0f98cf]
+cluster Activities--><rect fill="#FFFFFF" filter="url(#f1rsnufkbqjcge)" height="328" style="stroke:#000000;stroke-width:3.0;" width="710" x="994" y="490"/><path d="M1150,490 L1150,508.9766 L1130,528.9766 L994,528.9766 " fill="none" style="stroke:#000000;stroke-width:3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="136" x="1000" y="519.0703">Activities</text><!--MD5=[be24512b7124c2a44e8f433ecca44cb4]
+cluster testEntry--><rect fill="#D3D3D3" filter="url(#f1rsnufkbqjcge)" height="194" style="stroke:#000000;stroke-width:3.0;" width="348" x="1308" y="576"/><path d="M1392,576 L1392,594.9766 L1372,614.9766 L1308,614.9766 " fill="none" style="stroke:#000000;stroke-width:3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="64" x="1314" y="605.0703">Test</text><!--MD5=[477546b927786c05e31d9ac83a0737ee]
+cluster Fragments--><rect fill="#FFFFFF" filter="url(#f1rsnufkbqjcge)" height="194" style="stroke:#000000;stroke-width:3.0;" width="748" x="960" y="866"/><path d="M1132,866 L1132,884.9766 L1112,904.9766 L960,904.9766 " fill="none" style="stroke:#000000;stroke-width:3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="152" x="966" y="895.0703">Fragments</text><!--MD5=[7552260fd2021a323855cf929da74f79]
+cluster modules--><rect fill="#FFFFFF" filter="url(#f1rsnufkbqjcge)" height="662" style="stroke:#000000;stroke-width:3.0;" width="784" x="80" y="98"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="122" x="411" y="129.0703">Modules</text><!--MD5=[c0e4946bd898d60d5fe8ad70bf6c1c37]
+cluster testModule--><rect fill="#D3D3D3" filter="url(#f1rsnufkbqjcge)" height="174" style="stroke:#000000;stroke-width:3.0;" width="308" x="452" y="184"/><path d="M536,184 L536,202.9766 L516,222.9766 L452,222.9766 " fill="none" style="stroke:#000000;stroke-width:3.0;"/><text fill="#000000" font-family="sans-serif" font-size="28" font-weight="bold" lengthAdjust="spacing" textLength="64" x="458" y="213.0703">Test</text><!--MD5=[4541fb81c80c07473fe4b07432ef0971]
+entity app--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="92.9766" style="stroke:#A80036;stroke-width:3.0;" width="136" x="1180" y="244"/><rect fill="#FEFECE" height="20" style="stroke:#A80036;stroke-width:3.0;" width="30" x="1276" y="254"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1272" y="258"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1272" y="266"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="56" x="1210" y="311.0703">App</text><!--MD5=[53ccf4b3ee6cf4337a0ab93ac09644f3]
+entity main--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="92.9766" style="stroke:#A80036;stroke-width:3.0;" width="244" x="1026" y="646"/><rect fill="#FEFECE" height="20" style="stroke:#A80036;stroke-width:3.0;" width="30" x="1230" y="656"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1226" y="660"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1226" y="668"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="164" x="1056" y="713.0703">MainActivity</text><!--MD5=[e496c201c160328513025af463636126]
+entity hilt--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="92.9766" style="stroke:#A80036;stroke-width:3.0;" width="282" x="1341" y="646"/><rect fill="#FEFECE" height="20" style="stroke:#A80036;stroke-width:3.0;" width="30" x="1583" y="656"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1579" y="660"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1579" y="668"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="202" x="1371" y="713.0703">HiltActivityTest</text><!--MD5=[7ace05dfa85c5aa630e44d2d8249b14d]
+entity stories--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="92.9766" style="stroke:#A80036;stroke-width:3.0;" width="306" x="1369" y="936"/><rect fill="#FEFECE" height="20" style="stroke:#A80036;stroke-width:3.0;" width="30" x="1635" y="946"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1631" y="950"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1631" y="958"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="226" x="1399" y="1003.0703">StoriesFragment</text><!--MD5=[c249f364d83a401275c0ae35335e5f45]
+entity source--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="92.9766" style="stroke:#A80036;stroke-width:3.0;" width="306" x="993" y="936"/><rect fill="#FEFECE" height="20" style="stroke:#A80036;stroke-width:3.0;" width="30" x="1259" y="946"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1255" y="950"/><rect fill="#FEFECE" height="4" style="stroke:#A80036;stroke-width:3.0;" width="8" x="1255" y="958"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="226" x="1023" y="1003.0703">SourceFragment</text><!--MD5=[d4fd26f9614fa07fe76bdcffa998e3d3]
+entity local--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="166" x="121" y="664"/><rect fill="#FEFECE" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="166" x="113" y="656"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="134" x="129" y="699.0703">Local (DB)</text><!--MD5=[54d971dad47cff388ffbbbedc20d1b22]
+entity remoteParams--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="236" x="178" y="262"/><rect fill="#FEFECE" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="236" x="170" y="254"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="204" x="186" y="297.0703">RemoteParams</text><!--MD5=[200d7cc177ce404b822df68e5d127056]
+entity remote--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="208" x="366" y="664"/><rect fill="#FEFECE" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="208" x="358" y="656"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="176" x="374" y="699.0703">Remote (API)</text><!--MD5=[24b005fcbd1feaad7f7dedc55a678d14]
+entity repository--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="178" x="653" y="664"/><rect fill="#FEFECE" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="178" x="645" y="656"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="146" x="661" y="699.0703">Repository</text><!--MD5=[a7a9bb650605d14f484b454649690d0b]
+entity remoteParamsTest--><rect fill="#FEFECE" filter="url(#f1rsnufkbqjcge)" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="236" x="492" y="262"/><rect fill="#FEFECE" height="64.9766" style="stroke:#A80036;stroke-width:3.0;" width="236" x="484" y="254"/><text fill="#000000" font-family="sans-serif" font-size="28" lengthAdjust="spacing" textLength="204" x="500" y="297.0703">RemoteParams</text><!--MD5=[bb843bb5dcebdd4b25668a323af70c09]
+link app to main--><path d="M1236.92,336.12 C1218.52,409.34 1181.74,555.76 1161.72,635.38 " fill="none" id="app-to-main" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1159.14,645.68,1171.2776,630.1661,1161.5721,635.9803,1155.758,626.2748,1159.14,645.68" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[6d1843a9146719223e0e0f3ed2298ee7]
+link app to hilt--><path d="M1273.94,336.12 C1312.86,402.3 1386.96,528.34 1435.4,610.74 " fill="none" id="app-to-hilt" style="stroke:#A80036;stroke-width:2.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="1447.74,604.12,1455.94,645.68,1423.6,618.3,1447.74,604.12" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[d1a17e29dd7479108c3b0c1dce3bd6f3]
+link main to stories--><path d="M1194.56,738.44 C1225.6,767.12 1267.9,804.44 1308,834 C1318.92,842.06 1322.64,842.58 1334,850 C1373.22,875.6 1416.22,905.22 1451.18,929.72 " fill="none" id="main-to-stories" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1459.9,935.82,1449.7732,918.9248,1451.7184,930.07,1440.5732,932.0153,1459.9,935.82" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[26bd99861655a5d765e4713f77677ed9]
+link main to source--><path d="M1147.7,738.06 C1147.34,788.3 1146.76,870.5 1146.38,924.92 " fill="none" id="main-to-source" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="1146.32,935.42,1154.4227,917.466,1146.3771,925.4202,1138.423,917.3746,1146.32,935.42" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[b0f0e5f76b24d279a3c92a4cb606db82]
+link local to remote--><path d="M287.28,692 C310.78,692 334.28,692 357.8,692 " fill="none" id="local-remote" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[7cae5ffce7bd18c682860d3abcb050ce]
+link remote to repository--><path d="M574.38,692 C597.82,692 621.24,692 644.68,692 " fill="none" id="remote-repository" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[d9e41c071b024dd5d13485e42c42a9dd]
+link remoteParams to remote--><path d="M307.14,326.62 C338.84,399.14 412.14,566.82 446.98,646.48 " fill="none" id="remoteParams-to-remote" style="stroke:#A80036;stroke-width:2.0;"/><polygon fill="#A80036" points="451.02,655.74,451.1571,636.0428,447.0223,646.5738,436.4912,642.4391,451.02,655.74" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[c3f2e1a1e40959a09523b79d4edceacb]
+link remoteParamsTest to remote--><path d="M593.82,326.62 C571.06,391.32 521.64,531.8 491.36,617.9 " fill="none" id="remoteParamsTest-to-remote" style="stroke:#A80036;stroke-width:2.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="504.54,622.66,478.06,655.74,478.12,613.36,504.54,622.66" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[13f1f2b9f51507f96f74bcdf5c71d8b6]
+link remoteParams to remoteParamsTest--><path d="M414.04,290 C437.28,290 460.54,290 483.78,290 " fill="none" id="remoteParams-remoteParamsTest" style="stroke:#A80036;stroke-width:2.0;"/><!--MD5=[c3928fb90bfe1ba6b0eaca6b96befdce]
+@startuml
+package Dagger-Hilt {
+    frame EntryPoint as entry {
+        component App as app
+
+        frame Activities {
+            component MainActivity as main
+
+            frame Test as testEntry #LightGray {
+                component HiltActivityTest as hilt
+            }
+        }
+
+        frame Fragments {
+            component StoriesFragment as stories
+            component SourceFragment as source
+        }
+
+        app -down-> main
+        app -down..|> hilt
+        main -down-> stories
+        main -down-> source
+    }
+
+    rectangle Modules as modules {
+        collections "Local (DB)" as local
+        collections "RemoteParams" as remoteParams
+        collections "Remote (API)" as remote
+        collections "Repository" as repository
+
+        frame Test as testModule #LightGray {
+            collections "RemoteParams" as remoteParamsTest
+        }
+
+        local - remote
+        remote - repository
+
+        remoteParams -down-> remote
+        remoteParamsTest -down..|> remote
+
+        remoteParams - remoteParamsTest
+    }
+}
+@enduml
+
+PlantUML version 1.2021.3(Mon Mar 22 12:53:19 EDT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

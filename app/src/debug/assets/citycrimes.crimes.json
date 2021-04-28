@@ -1,0 +1,198 @@
+[
+  {
+    "category": "bicycle-theft",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Investigation complete; no suspect identified",
+      "date": "2021-02"
+    },
+    "persistent_id": "d9fba874c506c7abf48c7bd2fd85d04345e6c87f1ba22b7c24702afb1ad5d378",
+    "id": 90361383,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "bicycle-theft",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Investigation complete; no suspect identified",
+      "date": "2021-02"
+    },
+    "persistent_id": "7ae579e09c6e4e3b59ceaeacf94d2f590adafb730173b819772578258ce3f8f3",
+    "id": 90361348,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "burglary",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Under investigation",
+      "date": "2021-02"
+    },
+    "persistent_id": "52b42da8725726e252fbf2c4f4c7b24a74ef5199a503dc14c58f9f2d0af5d31a",
+    "id": 90361075,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "other-theft",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Investigation complete; no suspect identified",
+      "date": "2021-02"
+    },
+    "persistent_id": "5e914edfbe665738fd19a8d48fece727b2404eca775b105b01338d3718c4d96f",
+    "id": 90362100,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "other-theft",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Investigation complete; no suspect identified",
+      "date": "2021-02"
+    },
+    "persistent_id": "91f8c2fb50b0ab130ffcc4a964e1cfa6dae09b517dbadfa992fc71e49d5efb06",
+    "id": 90362024,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "possession-of-weapons",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Under investigation",
+      "date": "2021-02"
+    },
+    "persistent_id": "f884c3ffd310a6e3def55bda95205307bbf3d75b60d57992ec831972fa8d8c4c",
+    "id": 90360543,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "public-order",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Under investigation",
+      "date": "2021-02"
+    },
+    "persistent_id": "ca2067cfab49fd76d33818f9fa830b1da7bdfd8f7e8c554f95b1a100f3b8f77e",
+    "id": 90363032,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "public-order",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Formal action is not in the public interest",
+      "date": "2021-02"
+    },
+    "persistent_id": "b8f07b4fdf4b1d57b5b53b742bbb7699ca6779061eae190eb8cc51e8c6f33a26",
+    "id": 90363043,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "public-order",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Under investigation",
+      "date": "2021-02"
+    },
+    "persistent_id": "4fc274591bc61230e57942dc0094f4a71ae27991486ab795b3f932c5a557dec9",
+    "id": 90359875,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "public-order",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Under investigation",
+      "date": "2021-02"
+    },
+    "persistent_id": "9bbd185ed5939fbad8dc1e8fbed8447f78a22c2e2dc322961ca450aeb30adfbb",
+    "id": 90359944,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "violent-crime",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Under investigation",
+      "date": "2021-02"
+    },
+    "persistent_id": "38ecf5389552398bf2bbcddd4eb54bd85e216b7f329fb219324f31581320499b",
+    "id": 90360647,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "violent-crime",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Awaiting court outcome",
+      "date": "2021-02"
+    },
+    "persistent_id": "f5db3e3550b1b1a0ca74f832cbb0575483c110c755459d5ba04a4111408c5b69",
+    "id": 90360067,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "violent-crime",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Action to be taken by another organisation",
+      "date": "2021-02"
+    },
+    "persistent_id": "731eac85a6248ff0e868a0b7bff3d3a211da89440b7c89c84572d12743c55b39",
+    "id": 90358257,
+    "location_subtype": "",
+    "month": "2021-02"
+  },
+  {
+    "category": "violent-crime",
+    "location_type": null,
+    "location": null,
+    "context": "",
+    "outcome_status": {
+      "category": "Investigation complete; no suspect identified",
+      "date": "2021-02"
+    },
+    "persistent_id": "90a0a856f775621084a47caf07d6ec89ad79d71f7cf56a088475689f78c1a4cf",
+    "id": 90358020,
+    "location_subtype": "",
+    "month": "2021-02"
+  }
+]

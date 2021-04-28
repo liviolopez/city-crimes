@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">City Crimes</string>
+
+    <string name="home_label">City Crimes</string>
+
+    <string name="retry">Retry</string>
+    <string name="empty_list">No results found</string>
+    <string name="empty_list_msg">No results found for %1$s</string>
+    <string name="error_msg">An error occurred, please try again</string>
+    <string name="error_msg_param">An error occurred\n%1$s</string>
+    <string name="error_msg_updating">An error has occurred when trying to update the data</string>
+
+    <string name="update_database">Update database</string>
+    <string name="availability">Available date</string>
+    <string name="force">Force</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
+
+    <string name="context">Context</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="all_locations">All locations</string>
+    <string name="my_current_location">My current location</string>
+</resources>

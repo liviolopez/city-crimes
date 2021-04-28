@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/grocery_menu">
+        <item android:id="@+id/clean_card"
+            android:title="@string/update_database"
+            android:icon="@drawable/ic_update_db"
+            app:showAsAction="always"/>
+    </group>
+</menu>
