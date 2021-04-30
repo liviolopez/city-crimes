@@ -29,12 +29,12 @@ class HomeViewModel @Inject constructor(
         get() = _filterDate.value
         set(value) { _filterDate.value = value }
 
-    private val _filterCategory = savedStateHandle.getLiveData<String>("filter_category")
+    private val _filterCategory = savedStateHandle.getLiveData<Category>("filter_category")
     var filterCategory
         get() = _filterCategory.value
         set(value) { _filterCategory.value = value }
 
-    private val _filterForce = savedStateHandle.getLiveData<String>("filter_force")
+    private val _filterForce = savedStateHandle.getLiveData<Force>("filter_force")
     var filterForce
         get() = _filterForce.value
         set(value) { _filterForce.value = value }
@@ -54,14 +54,14 @@ class HomeViewModel @Inject constructor(
     fun filterCrimes() {
         _filterLocation.value?._log()
 
-        if(!_filterDate.value.isNullOrEmpty() && !_filterCategory.value.isNullOrEmpty() && !_filterForce.value.isNullOrEmpty()){
+        if(!_filterDate.value.isNullOrEmpty() && _filterCategory.value !== null && _filterForce.value !== null){
             viewModelScope.launch {
                 _crimesFiltered.value = Resource.loading()
 
                 val crimesFlow = if(_filterLocation.value == LocationFilter.All) {
-                    repository.fetchCrimes( _filterDate.value!!, _filterCategory.value!!, _filterForce.value!!)
+                    repository.fetchCrimes( _filterDate.value!!, _filterCategory.value!!.id, _filterForce.value!!.id)
                 } else {
-                    repository.fetchCrimesCloseToMe( _filterDate.value!!, _filterCategory.value!!, _filterForce.value!!, 52.629729, -1.131592)
+                    repository.fetchCrimesCloseToMe( _filterDate.value!!, _filterCategory.value!!.id, _filterForce.value!!.id, 52.629729, -1.131592)
                 }
 
                 crimesFlow.catch { e -> _crimesFiltered.value = Resource.error(e, emptyList()) }
