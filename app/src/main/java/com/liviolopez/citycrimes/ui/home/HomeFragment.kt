@@ -59,20 +59,20 @@ class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventL
 
         lifecycleScope.launch {
             binding.dmCategory.setOptions(viewModel.categories,
-                currentVal = viewModel.filterCategory,
+                currentVal = viewModel.filterCategory?.name,
                 show = { it.name },
                 onClick = {
-                    viewModel.filterCategory = it.id
+                    viewModel.filterCategory = it
                     filterCrimes()
                 })
         }
 
         lifecycleScope.launch {
             binding.dmForce.setOptions(viewModel.forces,
-                currentVal = viewModel.filterForce,
+                currentVal = viewModel.filterForce?.name,
                 show = { it.name },
                 onClick = {
-                    viewModel.filterForce = it.id
+                    viewModel.filterForce = it
                     filterCrimes()
                 })
         }
