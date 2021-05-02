@@ -26,13 +26,15 @@ fun View.showSnackBar(
     Snackbar.make(this, msg, duration).show()
 }
 
-suspend fun <T> TextInputLayout.setOptions(flow: Flow<List<T>>, currentVal: String?, show: (T) -> String, onClick: (T) -> Unit) {
+suspend fun <T> TextInputLayout.setOptions(flow: Flow<List<T>>, show: (T) -> String, currentValIf: (T) -> Boolean, onClick: (T) -> Unit ) {
     val context = this.context
     flow.collect { values ->
         val adapter = ArrayAdapter(context, R.layout.text_item, values.map { show(it) })
         (this.editText as? AutoCompleteTextView)?.apply {
-            currentVal?.let { setText(it) }
             setAdapter(adapter)
+            values.firstOrNull { currentValIf(it) }?.let {
+                setText(show(it))
+            }
             setOnItemClickListener { _, _, position, _ ->
                 onClick(values[position])
             }
