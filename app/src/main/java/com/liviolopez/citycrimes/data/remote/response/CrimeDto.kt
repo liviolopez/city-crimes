@@ -38,7 +38,6 @@ fun CrimeDto.toLocalModel(forceId: String, closeToMe: Boolean) = Crime(
     forceId = forceId,
     context = context,
 
-    locationLatitude = location?.latitude,
-    locationLongitude = location?.longitude,
-    closeToMe = closeToMe
+    closeToMe = closeToMe,
+    location = if(!location?.latitude.isNullOrEmpty() && !location?.longitude.isNullOrEmpty()) Crime.Location(location?.latitude, location?.longitude) else null
 )
