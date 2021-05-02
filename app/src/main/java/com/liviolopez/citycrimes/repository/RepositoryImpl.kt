@@ -41,7 +41,7 @@ class RepositoryImpl(
         },
         saveFetchResult = { crimes ->
             localData.withTransaction {
-                // crimeDao.deleteAllCrimes()
+                crimeDao.deleteAllCrimes()
                 crimeDao.insertCrimes(crimes.map { it.toLocalModel(forceId, false) })
             }
         }
@@ -60,7 +60,7 @@ class RepositoryImpl(
         },
         saveFetchResult = { crimes ->
             localData.withTransaction {
-                // crimeDao.deleteAllCrimes()
+                crimeDao.deleteAllCrimes()
                 crimeDao.insertCrimes(crimes.map { it.toLocalModel(forceId, true) })
             }
         }

@@ -8,7 +8,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.liviolopez.citycrimes.R
-import com.liviolopez.citycrimes.data.local.model.CrimeInfo
 import com.liviolopez.citycrimes.databinding.FragmentHomeBinding
 import com.liviolopez.citycrimes.ui._components.loading
 import com.liviolopez.citycrimes.ui._components.showEmptyMsg
@@ -20,10 +19,11 @@ import com.liviolopez.citycrimes.utils.extensions.setOptions
 import com.liviolopez.citycrimes.utils.extensions.setVisible
 import com.liviolopez.citycrimes.utils.extensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.launch
 
+@FlowPreview
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventListener {
     private val TAG = "HomeFragment"
@@ -49,74 +49,50 @@ class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventL
     private fun setupFilterValues(){
         lifecycleScope.launch {
             binding.dmAvailability.setOptions(viewModel.availabilities,
-                currentVal = viewModel.filterDate,
                 show = { it.date },
-                onClick = {
-                    viewModel.filterDate = it.date
-                    filterCrimes()
-                })
+                currentValIf = { it.date == viewModel.filterDate.value },
+                onClick = { viewModel.filterDate.value = it.date }
+            )
         }
 
         lifecycleScope.launch {
             binding.dmCategory.setOptions(viewModel.categories,
-                currentVal = viewModel.filterCategory?.name,
                 show = { it.name },
-                onClick = {
-                    viewModel.filterCategory = it
-                    filterCrimes()
-                })
+                currentValIf = { it.id == viewModel.filterCategory.value },
+                onClick = { viewModel.filterCategory.value = it.id }
+            )
         }
 
         lifecycleScope.launch {
             binding.dmForce.setOptions(viewModel.forces,
-                currentVal = viewModel.filterForce?.name,
                 show = { it.name },
-                onClick = {
-                    viewModel.filterForce = it
-                    filterCrimes()
-                })
+                currentValIf = { it.id == viewModel.filterForce.value },
+                onClick = { viewModel.filterForce.value = it.id }
+            )
         }
 
-        if(viewModel.filterLocation == null){
-            viewModel.filterLocation = HomeViewModel.LocationFilter.All
-            binding.rbAllLocations.isChecked = true
-        }
+        viewModel.filterLocation.value = HomeViewModel.LocationFilter.All
+        binding.rbAllLocations.isChecked = true
 
         binding.rgLocations.setOnCheckedChangeListener { _, checkedId ->
             when(checkedId){
                 R.id.rb_all_locations -> {
-                    viewModel.filterLocation = HomeViewModel.LocationFilter.All
+                    viewModel.filterLocation.value = HomeViewModel.LocationFilter.All
                 }
                 R.id.rb_current_location -> {
-                    viewModel.filterLocation = HomeViewModel.LocationFilter.CURRENT
+                    viewModel.filterLocation.value = HomeViewModel.LocationFilter.CURRENT
                 }
             }
-
-            filterCrimes()
-        }
-    }
-
-    private fun filterCrimes(){
-        crimeAdapter.submitList(emptyList())
-        viewModel.filterCrimes()
-    }
-
-    private fun submitCrimesListAdapter(itemsList: List<CrimeInfo>) {
-        crimeAdapter.submitList(itemsList) {
-            binding.rvCrimeInfo.scrollToPosition(0)
         }
     }
 
     private fun setupCrimesAdapter() {
         lifecycleScope.launch {
-            viewModel.crimesFiltered.debounce(300).collect { result ->
+            viewModel.crimesFiltered.collect { result ->
                 when (result.status) {
                     Resource.Status.LOADING -> {
-                        if (result.data.isNullOrEmpty()) {
-                            binding.standbyView.loading
-                        } else {
-                            submitCrimesListAdapter(result.data)
-                        }
+                        binding.standbyView.loading
+                        crimeAdapter.submitList(emptyList())
                     }
                     Resource.Status.SUCCESS -> {
                         binding.standbyView.success
@@ -125,7 +101,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventL
                             binding.apply { standbyView showEmptyMsg rvCrimeInfo }
                         } else {
                             binding.rvCrimeInfo.setVisible()
-                            submitCrimesListAdapter(result.data)
+                            crimeAdapter.submitList(result.data)
                         }
                     }
                     Resource.Status.ERROR -> {
@@ -138,7 +114,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventL
                                 result.throwable?.localizedMessage
                             )
                         } else {
-                            submitCrimesListAdapter(result.data)
                             binding.root.showSnackBar(getString(R.string.error_msg_updating))
                         }
                     }
