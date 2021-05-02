@@ -32,7 +32,7 @@ interface ApiService {
     ): List<CrimeDto>
 
     @GET("api/crimes-street/all-crime")
-    suspend fun fetchCrimesCloseToMe(
+    suspend fun fetchCrimesNearPosition(
         @Query("date") date: String,
         @Query("category") categoryId: String,
         @Query("force") forceId: String,

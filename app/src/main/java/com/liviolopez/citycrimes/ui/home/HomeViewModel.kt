@@ -1,10 +1,7 @@
 package com.liviolopez.citycrimes.ui.home
 
 import androidx.lifecycle.*
-import com.liviolopez.citycrimes.data.local.model.Availability
-import com.liviolopez.citycrimes.data.local.model.Category
-import com.liviolopez.citycrimes.data.local.model.CrimeInfo
-import com.liviolopez.citycrimes.data.local.model.Force
+import com.liviolopez.citycrimes.data.local.model.*
 import com.liviolopez.citycrimes.repository.Repository
 import com.liviolopez.citycrimes.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +15,7 @@ class HomeViewModel @Inject constructor(
     private val repository: Repository,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-    enum class LocationFilter { All, CURRENT }
+    enum class LocationFilter { All, WAS_CLOSE }
 
     init {
         viewModelScope.launch {
@@ -60,21 +57,21 @@ class HomeViewModel @Inject constructor(
     private suspend fun filterCrimes() {
         val filterScope = CoroutineScope(Dispatchers.IO)
 
-        isValidFilter.collect { isValid ->
+        isValidFilter.debounce(500).collectLatest { isValid ->
             filterScope.coroutineContext.cancelChildren()
 
             if (isValid){
                 _crimesFiltered.value = Resource.loading()
 
-                val crimesFlow = if(_filterLocation.value == LocationFilter.All) {
-                    repository.fetchCrimes( _filterDate.value!!, _filterCategory.value!!, _filterForce.value!!)
+                val location = if(_filterLocation.value == LocationFilter.WAS_CLOSE) {
+                    Crime.Location(52.629729, -1.131592)
                 } else {
-                    repository.fetchCrimesCloseToMe( _filterDate.value!!, _filterCategory.value!!, _filterForce.value!!, 52.629729, -1.131592)
+                    null
                 }
 
                 filterScope.launch {
-                    crimesFlow.catch { e -> _crimesFiltered.value = Resource.error(e, emptyList()) }
-                        .debounce(500)
+                    repository.fetchCrimes( _filterDate.value!!, _filterCategory.value!!, _filterForce.value!!, location)
+                        .catch { e -> _crimesFiltered.value = Resource.error(e, emptyList()) }
                         .collectLatest {  _crimesFiltered.value = it }
                 }
 

@@ -86,11 +86,11 @@
             android:layout_height="match_parent"
             android:text="@string/all_locations"/>
         <RadioButton
-            android:id="@+id/rb_current_location"
+            android:id="@+id/rb_close_my_location"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="@string/my_current_location"/>
+            android:text="@string/close_my_location"/>
     </RadioGroup>
 
     <View

@@ -22,11 +22,11 @@ data class Crime(
     val context: String?,
 
     val location: Location?,
-    val closeToMe: Boolean
+    val wasCloseToMe: Boolean
 ) {
     data class Location(
-        val latitude: String?,
-        val longitude: String?
+        val latitude: Double,
+        val longitude: Double
     )
 }
 
