@@ -21,10 +21,14 @@ data class Crime(
     val forceId: String,
     val context: String?,
 
-    val locationLatitude: String?,
-    val locationLongitude: String?,
+    val location: Location?,
     val closeToMe: Boolean
-)
+) {
+    data class Location(
+        val latitude: String?,
+        val longitude: String?
+    )
+}
 
 data class CrimeInfo(
     @Embedded val crime: Crime,

@@ -11,7 +11,6 @@ import com.liviolopez.citycrimes.databinding.CrimeItemBinding
 import com.liviolopez.citycrimes.ui._components.BindingViewHolder
 import com.liviolopez.citycrimes.ui._components.typed
 import com.liviolopez.citycrimes.ui._components.viewHolderFrom
-import kotlinx.coroutines.*
 
 class CrimeAdapter(
     private val onCrimeEventListener: OnItemEventListener,
@@ -42,14 +41,13 @@ class CrimeAdapter(
         override fun areContentsTheSame(oldItem: CrimeInfo, newItem: CrimeInfo) = oldItem == newItem
     }
 
-    @FlowPreview
     private fun BindingViewHolder<CrimeItemBinding>.bind(crimeInfo: CrimeInfo) {
         binding.apply {
             tvCategory.text = crimeInfo.category.name
             tvMonth.text = crimeInfo.crime.month
             tvContext.text = crimeInfo.crime.context
 
-            if(crimeInfo.crime.locationLatitude == null || crimeInfo.crime.locationLongitude == null){
+            if(crimeInfo.crime.location == null){
                 btnLocation.setImageDrawable(ContextCompat.getDrawable(root.context, R.drawable.ic_no_location))
             } else {
                 btnLocation.setImageDrawable(ContextCompat.getDrawable(root.context, R.drawable.ic_location))
