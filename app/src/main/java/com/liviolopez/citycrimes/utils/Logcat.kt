@@ -29,21 +29,19 @@ private fun classPath(trace: StackTraceElement?): String? {
 }
 
 private fun methodFlow(trace: StackTraceElement?): String? {
-    var methodFlow = trace?.className?.split(".")?.last()?.replace("$1", "")?.split('$')?.joinToString(" -> ")
-    if(methodFlow != null) methodFlow += " -> "; methodFlow += trace?.methodName
+    var methodFlow = trace?.className?.split(".")?.last()?.replace("$1", "")?.split('$')?.joinToString(" ❱ ")
+    if(methodFlow != null) methodFlow += " ❱ "; methodFlow += trace?.methodName
     return methodFlow
 }
 
 private fun logcatLink(trace: StackTraceElement?) = ("${trace?.fileName}:${trace?.lineNumber}").let { "(${it})" }
 
 private fun headerLog(): String {
-
-
     val trace = lastTraceElement()
 
-    val headerInfo = "${classPath(trace)}/${logcatLink(trace)} :: $${methodFlow(trace)}"
+    val headerInfo = "${classPath(trace)}/${logcatLink(trace)} ❪$${methodFlow(trace)}❫"
 
-    return "$headerInfo => "
+    return "$headerInfo ⟹ "
 }
 
 fun Any._log(TAG:String = "", priority: Int = Log.DEBUG) {
@@ -78,7 +76,7 @@ fun _printTraceLog(TAG:String = "", onlyApp:Boolean = true){
                 .toList().asReversed()
                 .forEachIndexed { index, it ->
                     if (index == 0) println("${tagLog(TAG)} :: START TRACE HERE")
-                    println("${tagLog(TAG)} :: --> ${classPath(it)}/${it.fileName} :: ${methodFlow(it)} :: ${logcatLink(it)}")
+                    println("${tagLog(TAG)} :: ⟶ ${classPath(it)}/${it.fileName} :: ${methodFlow(it)} :: ${logcatLink(it)}")
                 }
                 .let { println("${tagLog(TAG)} :: END TRACE HERE") }
 

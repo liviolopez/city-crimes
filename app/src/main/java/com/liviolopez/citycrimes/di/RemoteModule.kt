@@ -3,6 +3,7 @@ package com.liviolopez.citycrimes.di
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import com.liviolopez.citycrimes.base.Constants
+import com.liviolopez.citycrimes.base.DebugConfig
 import com.liviolopez.citycrimes.data.remote.ApiService
 import dagger.Module
 import dagger.Provides
@@ -21,7 +22,7 @@ class RemoteModule {
     @Singleton
     @Provides
     fun provideOkHttpClient() = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+        .addInterceptor(HttpLoggingInterceptor().setLevel(DebugConfig.Retrofit))
         .build()
 
     @Singleton
