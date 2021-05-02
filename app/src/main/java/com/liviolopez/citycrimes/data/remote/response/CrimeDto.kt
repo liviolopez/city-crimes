@@ -30,7 +30,7 @@ data class Street(
     val name: String
 )
 
-fun CrimeDto.toLocalModel(forceId: String, closeToMe: Boolean) = Crime(
+fun CrimeDto.toLocalModel(forceId: String, wasCloseToMe: Boolean) = Crime(
     id = id,
     persistentId = persistentId,
     month = month,
@@ -38,6 +38,6 @@ fun CrimeDto.toLocalModel(forceId: String, closeToMe: Boolean) = Crime(
     forceId = forceId,
     context = context,
 
-    closeToMe = closeToMe,
-    location = if(!location?.latitude.isNullOrEmpty() && !location?.longitude.isNullOrEmpty()) Crime.Location(location?.latitude, location?.longitude) else null
+    wasCloseToMe = wasCloseToMe,
+    location = if(!location?.latitude.isNullOrEmpty() && !location?.longitude.isNullOrEmpty()) Crime.Location(location!!.latitude.toDouble(), location.longitude.toDouble()) else null
 )

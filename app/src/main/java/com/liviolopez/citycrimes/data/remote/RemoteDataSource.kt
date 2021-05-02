@@ -8,8 +8,8 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
         return apiService.fetchCrimes(date, categoryId, forceId)
     }
 
-    suspend fun fetchCrimesCloseToMe(date: String, categoryId: String, forceId: String, latitude: Double, longitude: Double): List<CrimeDto> {
-        return apiService.fetchCrimesCloseToMe(date, categoryId, forceId, latitude, longitude)
+    suspend fun fetchCrimesNearPosition(date: String, categoryId: String, forceId: String, latitude: Double, longitude: Double): List<CrimeDto> {
+        return apiService.fetchCrimesNearPosition(date, categoryId, forceId, latitude, longitude)
     }
 
     suspend fun fetchCrimeDetails(persistentId: String): DetailsDto {

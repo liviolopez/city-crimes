@@ -1,33 +1,47 @@
 package com.liviolopez.citycrimes.data.local.model
 
 import androidx.room.*
+import androidx.sqlite.db.SimpleSQLiteQuery
+import androidx.sqlite.db.SupportSQLiteQuery
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CrimeDao {
-    @Transaction
+    @Transaction // Annotation required because CrimeInfo is a data class with @Embedded fields
     @Query("SELECT * FROM crime WHERE persistentId = :persistentId")
     fun getCrime(persistentId: String): Flow<List<CrimeInfo>>
-
-    @Transaction
-    @Query("SELECT * FROM crime WHERE month = :date AND categoryId = :categoryId AND forceId = :forceId")
-    fun getCrimes(date: String, categoryId: String, forceId: String): Flow<List<CrimeInfo>>
-
-    @Transaction
-    @Query("SELECT * FROM crime WHERE month = :date AND forceId = :forceId ")
-    fun getCrimesAllCategories(date: String, forceId: String): Flow<List<CrimeInfo>>
-
-    @Transaction
-    @Query("SELECT * FROM crime WHERE month = :date AND categoryId = :categoryId AND forceId = :forceId AND closeToMe = :closeToMe")
-    fun getCrimesCloseToMe(date: String, categoryId: String, forceId: String, closeToMe: Boolean): Flow<List<CrimeInfo>>
-
-    @Transaction
-    @Query("SELECT * FROM crime WHERE month = :date AND forceId = :forceId AND closeToMe = :closeToMe")
-    fun getCrimesCloseToMeAllCategories(date: String, forceId: String, closeToMe: Boolean): Flow<List<CrimeInfo>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCrimes(crimes: List<Crime>)
 
     @Query("DELETE FROM Crime")
     suspend fun deleteAllCrimes()
+
+    /**
+     * This annotation is used instead of @Query since for this use case with the
+     * @Query annotation queries with "null" values should be ignored and not searched as "field == null"
+     */
+    @Transaction
+    @RawQuery
+    fun getCrimesRaw(query: SupportSQLiteQuery): Flow<List<CrimeInfo>>
+
+    /**
+     * Query maker for Crime table to then run it with @RawQuery annotation
+     */
+    fun createSimpleQuery(date: String, forceId: String, categoryId: String, location: Crime.Location? = null) : SimpleSQLiteQuery {
+        var query = "SELECT * FROM crime WHERE month = ? AND forceId = ?"
+        val params = mutableListOf<Any>(date, forceId)
+
+        if(categoryId != "all-crime"){
+            query += " AND categoryId = ?"
+            params.add(categoryId)
+        }
+
+        if(location != null){
+            query += " AND wasCloseToMe = ?"
+            params.add(true)
+        }
+
+        return SimpleSQLiteQuery(query, params.toTypedArray())
+    }
 }

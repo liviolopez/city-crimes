@@ -17,7 +17,6 @@ import com.liviolopez.citycrimes.utils.Resource
 import com.liviolopez.citycrimes.utils.extensions.setGone
 import com.liviolopez.citycrimes.utils.extensions.setOptions
 import com.liviolopez.citycrimes.utils.extensions.setVisible
-import com.liviolopez.citycrimes.utils.extensions.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.collect
@@ -79,8 +78,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventL
                 R.id.rb_all_locations -> {
                     viewModel.filterLocation.value = HomeViewModel.LocationFilter.All
                 }
-                R.id.rb_current_location -> {
-                    viewModel.filterLocation.value = HomeViewModel.LocationFilter.CURRENT
+                R.id.rb_close_my_location -> {
+                    viewModel.filterLocation.value = HomeViewModel.LocationFilter.WAS_CLOSE
                 }
             }
         }
@@ -107,15 +106,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), CrimeAdapter.OnItemEventL
                     Resource.Status.ERROR -> {
                         Log.e(TAG, "Error: ${result.throwable?.localizedMessage}")
 
-                        if (result.data.isNullOrEmpty()) {
-                            binding.rvCrimeInfo.setGone()
-                            binding.standbyView.showError = getString(
-                                R.string.error_msg_param,
-                                result.throwable?.localizedMessage
-                            )
-                        } else {
-                            binding.root.showSnackBar(getString(R.string.error_msg_updating))
-                        }
+                        binding.rvCrimeInfo.setGone()
+                        binding.standbyView.showError = getString(R.string.error_msg_param, result.throwable?.localizedMessage)
                     }
                 }
             }

@@ -3,10 +3,7 @@ package com.liviolopez.citycrimes.repository
 import androidx.room.withTransaction
 import com.liviolopez.citycrimes.data.local.AppDataBase
 import com.liviolopez.citycrimes.data.local.AppDataStore
-import com.liviolopez.citycrimes.data.local.model.Availability
-import com.liviolopez.citycrimes.data.local.model.Category
-import com.liviolopez.citycrimes.data.local.model.CrimeInfo
-import com.liviolopez.citycrimes.data.local.model.Force
+import com.liviolopez.citycrimes.data.local.model.*
 import com.liviolopez.citycrimes.data.remote.RemoteDataSource
 import com.liviolopez.citycrimes.data.remote.response.DetailsDto
 import com.liviolopez.citycrimes.data.remote.response.toLocalModel
@@ -28,40 +25,22 @@ class RepositoryImpl(
     private val categoryDao = localData.categoryDao()
     private val forceDao = localData.forceDao()
 
-    override fun fetchCrimes(date: String, categoryId: String, forceId: String) = networkBoundResource(
+    override fun fetchCrimes(date: String, categoryId: String, forceId: String, location: Crime.Location?) = networkBoundResource(
         loadFromDb = {
-            if(categoryId == "all-crime"){
-                crimeDao.getCrimesAllCategories(date, forceId)
-            } else {
-                crimeDao.getCrimes(date, categoryId, forceId)
-            }
+            val query = crimeDao.createSimpleQuery(date, forceId, categoryId, location)
+            crimeDao.getCrimesRaw(query)
         },
         createCall = {
-            remoteData.fetchCrimes(date, categoryId, forceId)
+            if(location == null){
+                remoteData.fetchCrimes(date, categoryId, forceId)
+            } else {
+                remoteData.fetchCrimesNearPosition(date, categoryId, forceId, location.latitude, location.longitude)
+            }
         },
         saveFetchResult = { crimes ->
             localData.withTransaction {
                 crimeDao.deleteAllCrimes()
-                crimeDao.insertCrimes(crimes.map { it.toLocalModel(forceId, false) })
-            }
-        }
-    )
-
-    override fun fetchCrimesCloseToMe(date: String, categoryId: String, forceId: String, latitude: Double, longitude: Double) = networkBoundResource(
-        loadFromDb = {
-            if(categoryId == "all-crime"){
-                crimeDao.getCrimesCloseToMeAllCategories(date, forceId, true)
-            } else {
-                crimeDao.getCrimesCloseToMe(date, categoryId, forceId, true)
-            }
-        },
-        createCall = {
-            remoteData.fetchCrimesCloseToMe(date, categoryId, forceId, latitude, longitude)
-        },
-        saveFetchResult = { crimes ->
-            localData.withTransaction {
-                crimeDao.deleteAllCrimes()
-                crimeDao.insertCrimes(crimes.map { it.toLocalModel(forceId, true) })
+                crimeDao.insertCrimes(crimes.map { it.toLocalModel(forceId, location != null) })
             }
         }
     )
