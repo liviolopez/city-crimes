@@ -8,10 +8,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CrimeDao {
     @Transaction // Annotation required because CrimeInfo is a data class with @Embedded fields
-    @Query("SELECT * FROM crime WHERE persistentId = :persistentId")
-    fun getCrime(persistentId: String): Flow<List<CrimeInfo>>
+    @Query("SELECT * FROM crime WHERE persistentId = :persistentId LIMIT 1")
+    fun getCrime(persistentId: String): Flow<CrimeInfo>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertCrimes(crimes: List<Crime>)
 
     @Query("DELETE FROM Crime")

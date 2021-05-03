@@ -72,7 +72,7 @@ class RepositoryImpl(
         return flowOf(Resource.success(remoteData.fetchCrimeDetails(persistentId)))
     }
 
-    override fun getCrime(persistentId: String): Flow<List<CrimeInfo>> {
+    override fun getCrime(persistentId: String): Flow<CrimeInfo> {
         return crimeDao.getCrime(persistentId)
     }
 

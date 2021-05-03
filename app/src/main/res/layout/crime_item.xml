@@ -49,6 +49,16 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_month"
             tools:text="Context" />
 
+        <TextView
+            android:id="@+id/tv_latest_outcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_text"
+            android:textSize="@dimen/description_text_size"
+            app:layout_constraintStart_toStartOf="@+id/tv_month"
+            app:layout_constraintTop_toBottomOf="@+id/tv_context"
+            tools:text="Latest outcome" />
+
         <ImageButton
             android:id="@+id/btn_location"
             android:layout_width="40dp"

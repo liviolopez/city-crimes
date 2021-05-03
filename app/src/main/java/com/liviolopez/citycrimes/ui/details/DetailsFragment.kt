@@ -29,12 +29,11 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
         args.persistentId._log()
 
         lifecycleScope.launchWhenResumed {
-            viewModel.crime(args.persistentId).collect {
-                it.first().let {
-                    binding.apply {
-                        tvCategory.text = it.category.name
-                        tvDate.text = it.crime.month
-                    }
+            viewModel.crime(args.persistentId).collect { crimeInfo ->
+                binding.apply {
+                    tvCategory.text = crimeInfo.category.name
+                    tvDate.text = crimeInfo.crime.month
+                    tvLatestOutcome.text = crimeInfo.outcomes.firstOrNull()?.description
                 }
             }
         }

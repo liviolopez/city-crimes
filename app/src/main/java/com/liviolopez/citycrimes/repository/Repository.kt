@@ -10,7 +10,7 @@ interface Repository {
 
     fun fetchCrimes(date: String, categoryId: String, forceId: String, location: Crime.Location? = null): Flow<Resource<List<CrimeInfo>>>
 
-    fun getCrime(persistentId: String): Flow<List<CrimeInfo>>
+    fun getCrime(persistentId: String): Flow<CrimeInfo>
     suspend fun fetchCrimeDetail(persistentId: String): Flow<Resource<DetailsDto>>
 
     fun getAvailabilities(): Flow<List<Availability>>

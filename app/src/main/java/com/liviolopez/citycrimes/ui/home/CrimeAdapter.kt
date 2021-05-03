@@ -47,6 +47,10 @@ class CrimeAdapter(
             tvMonth.text = crimeInfo.crime.month
             tvContext.text = crimeInfo.crime.context
 
+            crimeInfo.outcomes.firstOrNull()?.let {
+                tvLatestOutcome.text = it.description
+            }
+
             if(crimeInfo.crime.location == null){
                 btnLocation.setImageDrawable(ContextCompat.getDrawable(root.context, R.drawable.ic_no_location))
             } else {
