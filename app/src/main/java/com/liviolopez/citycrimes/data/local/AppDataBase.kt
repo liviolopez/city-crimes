@@ -11,9 +11,15 @@ import com.liviolopez.citycrimes.data.local.model.*
 @Database(
     entities = [
         Crime::class,
+        CrimeOutcome::class,
+
+        Availability::class,
         Force::class,
         Category::class,
-        Availability::class,
+        OutcomeStatus::class
+    ],
+    views = [
+        CrimeOutcomeInfo::class
     ],
     version = 1,
     exportSchema = false
@@ -21,9 +27,12 @@ import com.liviolopez.citycrimes.data.local.model.*
 @TypeConverters(RoomTypeConverters::class)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun crimeDao(): CrimeDao
+    abstract fun crimeOutcomeDao(): CrimeOutcomeDao
+
     abstract fun forceDao(): ForceDao
     abstract fun categoryDao(): CategoryDao
     abstract fun availabilityDao(): AvailabilityDao
+    abstract fun outcomeStatusDao(): OutcomeStatusDao
 }
 
 class RoomTypeConverters {

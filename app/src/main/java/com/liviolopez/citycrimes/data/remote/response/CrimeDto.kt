@@ -12,23 +12,23 @@ data class CrimeDto(
     val locationType: String?,
     val month: String,
     val outcomeStatus: OutcomeStatus?,
-)
+) {
+    data class OutcomeStatus(
+        val category: String,
+        val date: String
+    )
 
-data class OutcomeStatus(
-    val category: String,
-    val date: String
-)
+    data class Location(
+        val latitude: String,
+        val longitude: String,
+        val street: Street
+    )
 
-data class Location(
-    val latitude: String,
-    val longitude: String,
-    val street: Street
-)
-
-data class Street(
-    val id: Int,
-    val name: String
-)
+    data class Street(
+        val id: Int,
+        val name: String
+    )
+}
 
 fun CrimeDto.toLocalModel(forceId: String, wasCloseToMe: Boolean) = Crime(
     id = id,
