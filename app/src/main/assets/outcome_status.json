@@ -1,0 +1,114 @@
+[
+  {
+    "id": "awaiting-court-result",
+    "name": "Awaiting court outcome"
+  },
+  {
+    "id": "court-result-unavailable",
+    "name": "Court result unavailable"
+  },
+  {
+    "id": "unable-to-proceed",
+    "name": "Court case unable to proceed"
+  },
+  {
+    "id": "local-resolution",
+    "name": "Local resolution"
+  },
+  {
+    "id": "no-further-action",
+    "name": "Investigation complete; no suspect identified"
+  },
+  {
+    "id": "deprived-of-property",
+    "name": "Offender deprived of property"
+  },
+  {
+    "id": "fined",
+    "name": "Offender fined"
+  },
+  {
+    "id": "absolute-discharge",
+    "name": "Offender given absolute discharge"
+  },
+  {
+    "id": "cautioned",
+    "name": "Offender given a caution"
+  },
+  {
+    "id": "drugs-possession-warning",
+    "name": "Offender given a drugs possession warning"
+  },
+  {
+    "id": "penalty-notice-issued",
+    "name": "Offender given a penalty notice"
+  },
+  {
+    "id": "community-penalty",
+    "name": "Offender given community sentence"
+  },
+  {
+    "id": "conditional-discharge",
+    "name": "Offender given conditional discharge"
+  },
+  {
+    "id": "suspended-sentence",
+    "name": "Offender given suspended prison sentence"
+  },
+  {
+    "id": "imprisoned",
+    "name": "Offender sent to prison"
+  },
+  {
+    "id": "other-court-disposal",
+    "name": "Offender otherwise dealt with"
+  },
+  {
+    "id": "compensation",
+    "name": "Offender ordered to pay compensation"
+  },
+  {
+    "id": "sentenced-in-another-case",
+    "name": "Suspect charged as part of another case"
+  },
+  {
+    "id": "charged",
+    "name": "Suspect charged"
+  },
+  {
+    "id": "not-guilty",
+    "name": "Defendant found not guilty"
+  },
+  {
+    "id": "sent-to-crown-court",
+    "name": "Defendant sent to Crown Court"
+  },
+  {
+    "id": "unable-to-prosecute",
+    "name": "Unable to prosecute suspect"
+  },
+  {
+    "id": "formal-action-not-in-public-interest",
+    "name": "Formal action is not in the public interest"
+  },
+  {
+    "id": "action-taken-by-another-organisation",
+    "name": "Action to be taken by another organisation"
+  },
+  {
+    "id": "further-investigation-not-in-public-interest",
+    "name": "Further investigation is not in the public interest"
+  },
+  {
+    "id": "further-action-not-in-public-interest",
+    "name": "Further action is not in the public interest"
+  },
+  {
+    "id": "under-investigation",
+    "name": "Under investigation"
+  },
+  {
+    "id": "status-update-unavailable",
+    "name": "Status update unavailable"
+  }
+]
