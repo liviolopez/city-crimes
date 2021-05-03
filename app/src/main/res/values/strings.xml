@@ -17,6 +17,7 @@
     <string name="date">Date</string>
 
     <string name="context">Context</string>
+    <string name="latest_outcome">Latest Outcome</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="all_locations">All locations</string>

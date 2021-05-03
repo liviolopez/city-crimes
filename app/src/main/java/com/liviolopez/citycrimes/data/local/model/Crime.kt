@@ -36,5 +36,10 @@ data class CrimeInfo(
     @Relation(
         parentColumn = "categoryId",
         entityColumn = "id"
-    ) val category: Category
+    ) val category: Category,
+
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "crimeId"
+    ) val outcomes: List<CrimeOutcomeInfo>,
 )

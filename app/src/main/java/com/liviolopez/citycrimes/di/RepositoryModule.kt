@@ -1,5 +1,6 @@
 package com.liviolopez.citycrimes.di
 
+import android.app.Application
 import com.liviolopez.citycrimes.data.local.AppDataBase
 import com.liviolopez.citycrimes.data.local.AppDataStore
 import com.liviolopez.citycrimes.data.remote.RemoteDataSource
@@ -20,9 +21,10 @@ object RepositoryModule {
     fun provideRepository(
         remoteData: RemoteDataSource,
         localData: AppDataBase,
-        appDataStore: AppDataStore
+        appDataStore: AppDataStore,
+        application: Application
     ): Repository {
-        return RepositoryImpl(remoteData, localData, appDataStore)
+        return RepositoryImpl(remoteData, localData, appDataStore, application)
     }
 
 }
